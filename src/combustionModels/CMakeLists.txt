@@ -1,29 +1,51 @@
-combustionModel/combustionModel.C
+# combustionModel/combustionModel.C
 
-psiCombustionModel/psiCombustionModel/psiCombustionModel.C
-psiCombustionModel/psiCombustionModel/psiCombustionModelNew.C
-psiCombustionModel/psiThermoCombustion/psiThermoCombustion.C
-psiCombustionModel/psiChemistryCombustion/psiChemistryCombustion.C
+# psiCombustionModel/psiCombustionModel/psiCombustionModel.C
+# psiCombustionModel/psiCombustionModel/psiCombustionModelNew.C
+# psiCombustionModel/psiThermoCombustion/psiThermoCombustion.C
+# psiCombustionModel/psiChemistryCombustion/psiChemistryCombustion.C
 
-rhoCombustionModel/rhoCombustionModel/rhoCombustionModel.C
-rhoCombustionModel/rhoCombustionModel/rhoCombustionModelNew.C
-rhoCombustionModel/rhoThermoCombustion/rhoThermoCombustion.C
-rhoCombustionModel/rhoChemistryCombustion/rhoChemistryCombustion.C
+# rhoCombustionModel/rhoCombustionModel/rhoCombustionModel.C
+# rhoCombustionModel/rhoCombustionModel/rhoCombustionModelNew.C
+# rhoCombustionModel/rhoThermoCombustion/rhoThermoCombustion.C
+# rhoCombustionModel/rhoChemistryCombustion/rhoChemistryCombustion.C
 
-diffusion/diffusions.C
-infinitelyFastChemistry/infinitelyFastChemistrys.C
+# diffusion/diffusions.C
+# infinitelyFastChemistry/infinitelyFastChemistrys.C
 
-PaSR/PaSRs.C
+# PaSR/PaSRs.C
 
-laminar/laminars.C
+# laminar/laminars.C
 
-FSD/reactionRateFlameAreaModels/consumptionSpeed/consumptionSpeed.C
-FSD/reactionRateFlameAreaModels/reactionRateFlameArea/reactionRateFlameArea.C
-FSD/reactionRateFlameAreaModels/reactionRateFlameArea/reactionRateFlameAreaNew.C
-FSD/reactionRateFlameAreaModels/relaxation/relaxation.C
+# FSD/reactionRateFlameAreaModels/consumptionSpeed/consumptionSpeed.C
+# FSD/reactionRateFlameAreaModels/reactionRateFlameArea/reactionRateFlameArea.C
+# FSD/reactionRateFlameAreaModels/reactionRateFlameArea/reactionRateFlameAreaNew.C
+# FSD/reactionRateFlameAreaModels/relaxation/relaxation.C
 
-FSD/FSDs.C
+# FSD/FSDs.C
 
-noCombustion/noCombustions.C
+# noCombustion/noCombustions.C
 
-LIB = $(FOAM_LIBBIN)/libcombustionModels
+# LIB = $(FOAM_LIBBIN)/libcombustionModels
+
+ADD_LIBRARY ( combustionModels SHARED
+  combustionModel/combustionModel.C
+  psiCombustionModel/psiCombustionModel/psiCombustionModel.C
+  psiCombustionModel/psiCombustionModel/psiCombustionModelNew.C
+  psiCombustionModel/psiThermoCombustion/psiThermoCombustion.C
+  psiCombustionModel/psiChemistryCombustion/psiChemistryCombustion.C
+  rhoCombustionModel/rhoCombustionModel/rhoCombustionModel.C
+  rhoCombustionModel/rhoCombustionModel/rhoCombustionModelNew.C
+  rhoCombustionModel/rhoThermoCombustion/rhoThermoCombustion.C
+  rhoCombustionModel/rhoChemistryCombustion/rhoChemistryCombustion.C
+  diffusion/diffusions.C
+  infinitelyFastChemistry/infinitelyFastChemistrys.C
+  PaSR/PaSRs.C
+  laminar/laminars.C
+  FSD/reactionRateFlameAreaModels/consumptionSpeed/consumptionSpeed.C
+  FSD/reactionRateFlameAreaModels/reactionRateFlameArea/reactionRateFlameArea.C
+  FSD/reactionRateFlameAreaModels/reactionRateFlameArea/reactionRateFlameAreaNew.C
+  FSD/reactionRateFlameAreaModels/relaxation/relaxation.C
+  FSD/FSDs.C
+  noCombustion/noCombustions.C
+  )
